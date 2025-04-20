@@ -50,6 +50,7 @@ func TestAddGetDelete(t *testing.T) {
 	// проверьте, что значения всех полей в полученном объекте совпадают со значениями полей в переменной parcel
 	testParcel, err := store.Get(lastId)
 	require.NoError(t, err)
+	parcel.Number = lastId //присваиваю тестовому пакету актульный номер из базы данных
 	assert.Equal(t, parcel, testParcel)
 
 	// delete
